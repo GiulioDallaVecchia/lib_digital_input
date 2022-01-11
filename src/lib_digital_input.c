@@ -111,34 +111,6 @@ void ldi_register(ldi_owner_t *const me, ldi_t *const di_ptr,
 }
 
 /**
- * \brief This function read the digital line state
- *
- * \param me: owner of the digital line
- * \param id: digital line ID of that will be read the state
- * \return: digital line state
- */
-ldi_state_t ldi_read_state(ldi_owner_t *const me, di_id_t id) {
-
-  ldi_t * di;
-  uint32_t mask = 1U;
-
-  assert(me != NULL);
-
-  for (di = me->head_list; di != (ldi_t*)0; di = di->next) {
-    if(id == di->id) {
-      if((me->ui32_depressed & mask) != 0U) { /* is button depressed? */
-        return DIG_INPUT_ACTIVE_STATE;
-      } else {
-        return DIG_INPUT_INACTIVE_STATE;
-      }
-    }
-    mask = mask << 1U; /* Shif mask by one */
-  }
-
-  return DIG_INPUT_UNKWON_STATE;
-}
-
-/**
  * \brief This function process all the digital line that are
  *        managed by a specific owner
  *
@@ -186,7 +158,7 @@ void ldi_process(ldi_owner_t *const me) {
         }
       }
     } else {
-      /* Lo stato del pulsante non è cambiato */
+      /* Lo stato della linea non è cambiato */
     }
 
     mask = mask << 1U; /* Shif mask by one */
@@ -194,4 +166,3 @@ void ldi_process(ldi_owner_t *const me) {
 }
 
 /*************** END OF FUNCTIONS ********************************************/
-
