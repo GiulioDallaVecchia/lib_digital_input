@@ -28,7 +28,7 @@
  *
  *
  * Author:          Giulio Dalla Vecchia <giulio.dallavecchia@gmail.com>
- * Version:         v0.0.1
+ * Version:         v0.0.2
  *
  ******************************************************************************/
 
@@ -162,8 +162,6 @@ void ldi_init(ldi_owner_t *const me, ldi_owner_cfg_t *const cfg_ptr);
 
 void ldi_register(ldi_owner_t *const me, ldi_t *const di_ptr,
     ldi_cfg_t const *const di_cfg_ptr);
-
-ldi_state_t ldi_read_state(ldi_owner_t *const me, di_id_t id);
 
 void ldi_process(ldi_owner_t *const me);
 
