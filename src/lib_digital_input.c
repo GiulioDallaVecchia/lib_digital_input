@@ -28,7 +28,7 @@
  *
  *
  * Author:          Giulio Dalla Vecchia <giulio.dallavecchia@gmail.com>
- * Version:         v0.0.1
+ * Version:         v0.0.2
  *
  ******************************************************************************/
 
